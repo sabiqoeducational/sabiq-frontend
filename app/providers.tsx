@@ -7,15 +7,17 @@ import { createQueryClient } from "@/shared/lib/queryClient";
 
 export default function AppProviders({
   tenant,
+  isPlatform,
   children,
 }: {
   tenant: string;
+  isPlatform: boolean;
   children: React.ReactNode;
 }) {
   const [queryClient] = useState(() => createQueryClient());
 
   return (
-    <TenantProvider tenant={tenant}>
+    <TenantProvider tenant={tenant} isPlatform={isPlatform}>
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </TenantProvider>
   );

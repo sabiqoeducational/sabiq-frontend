@@ -5,18 +5,21 @@ import type { TenantSlug } from "@/shared/types/tenant";
 
 type TenantContextValue = {
   tenant: TenantSlug;
+  isPlatform: boolean;
 };
 
 const TenantContext = createContext<TenantContextValue | null>(null);
 
 export function TenantProvider({
   tenant,
+  isPlatform,
   children,
 }: {
   tenant: TenantSlug;
+  isPlatform: boolean;
   children: React.ReactNode;
 }) {
-  const value = useMemo(() => ({ tenant }), [tenant]);
+  const value = useMemo(() => ({ tenant, isPlatform }), [tenant, isPlatform]);
   return <TenantContext.Provider value={value}>{children}</TenantContext.Provider>;
 }
 

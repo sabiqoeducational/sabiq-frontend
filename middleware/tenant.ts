@@ -1,9 +1,16 @@
-const ROOT_DOMAIN = process.env.NEXT_PUBLIC_ROOT_DOMAIN ?? "lvh.me";
+const ROOT_DOMAIN = process.env.NEXT_PUBLIC_ROOT_DOMAIN ?? "app.com";
+const PLATFORM_HOSTS = new Set([
+  ROOT_DOMAIN,
+  `www.${ROOT_DOMAIN}`,
+  "localhost",
+  "127.0.0.1",
+  "lvh.me",
+]);
 
 export function extractTenantFromHost(host: string): string | null {
   const hostname = host.split(":")[0].toLowerCase();
 
-  if (hostname === "localhost" || hostname === ROOT_DOMAIN) {
+  if (PLATFORM_HOSTS.has(hostname)) {
     return null;
   }
 
@@ -18,4 +25,9 @@ export function extractTenantFromHost(host: string): string | null {
   }
 
   return null;
+}
+
+export function isPlatformHost(host: string): boolean {
+  const hostname = host.split(":")[0].toLowerCase();
+  return PLATFORM_HOSTS.has(hostname);
 }

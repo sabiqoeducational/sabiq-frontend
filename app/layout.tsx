@@ -28,6 +28,7 @@ export default async function RootLayout({
 }>) {
   const headerStore = await headers();
   const tenant = headerStore.get("x-tenant") ?? "public";
+  const isPlatform = headerStore.get("x-platform") !== "false";
   const theme = getTenantTheme(tenant);
 
   return (
@@ -46,7 +47,9 @@ export default async function RootLayout({
         }
         className="min-h-full flex flex-col"
       >
-        <AppProviders tenant={tenant}>{children}</AppProviders>
+        <AppProviders tenant={tenant} isPlatform={isPlatform}>
+          {children}
+        </AppProviders>
       </body>
     </html>
   );
