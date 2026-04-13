@@ -3,6 +3,8 @@ import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { CSSProperties } from "react";
 import AppProviders from "@/app/providers";
+import { isRtlLocale } from "@/shared/i18n/config";
+import { getServerMessages } from "@/shared/i18n/server";
 import { getTenantTheme } from "@/shared/theme/tenantTheme";
 import "./globals.css";
 
@@ -16,10 +18,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "منصة سبيق",
-  description: "منصة SaaS تعليمية متعددة المستأجرين",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { messages } = await getServerMessages();
+  return {
+    title: messages.meta.title,
+    description: messages.meta.description,
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -29,12 +34,14 @@ export default async function RootLayout({
   const headerStore = await headers();
   const tenant = headerStore.get("x-tenant") ?? "public";
   const isPlatform = headerStore.get("x-platform") !== "false";
+  const { locale, messages } = await getServerMessages();
   const theme = getTenantTheme(tenant);
+  const dir = isRtlLocale(locale) ? "rtl" : "ltr";
 
   return (
     <html
-      lang="ar"
-      dir="rtl"
+      lang={locale}
+      dir={dir}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body
@@ -47,7 +54,12 @@ export default async function RootLayout({
         }
         className="min-h-full flex flex-col"
       >
-        <AppProviders tenant={tenant} isPlatform={isPlatform}>
+        <AppProviders
+          tenant={tenant}
+          isPlatform={isPlatform}
+          locale={locale}
+          messages={messages}
+        >
           {children}
         </AppProviders>
       </body>
