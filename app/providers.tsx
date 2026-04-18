@@ -2,7 +2,7 @@
 
 import { QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
-import { LanguageSwitcher } from "@/shared/components/LanguageSwitcher";
+// 1. مسحنا سطر الـ import بتاع الـ LanguageSwitcher من هنا
 import { LocaleProvider } from "@/shared/context/LocaleContext";
 import { TenantProvider } from "@/shared/context/TenantContext";
 import type { Locale } from "@/shared/i18n/config";
@@ -28,9 +28,6 @@ export default function AppProviders({
     <LocaleProvider locale={locale} messages={messages}>
       <TenantProvider tenant={tenant} isPlatform={isPlatform}>
         <QueryClientProvider client={queryClient}>
-          <div className="flex justify-end border-b border-slate-200 bg-white px-4 py-2">
-            <LanguageSwitcher />
-          </div>
           {children}
         </QueryClientProvider>
       </TenantProvider>

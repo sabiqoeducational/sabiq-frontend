@@ -16,6 +16,14 @@ const ar = {
         { value: "99.9%", label: "استمرارية الخدمة" },
       ],
     },
+    nav: {
+      home: "الرئيسية",
+      about: "من نحن",
+      features: "تعرف على النظام",
+      pricing: "الأسعار",
+      contact: "تواصل معنا",
+      login: "تسجيل الدخول",
+    },
     about: {
       title: "من نحن",
       body:
@@ -36,6 +44,14 @@ const ar = {
       password: "كلمة المرور",
       submit: "إنشاء الحساب",
     },
+  },
+  nav: {
+    home: "الرئيسية",
+    about: "من نحن",
+    features: "تعرف على النظام",
+    pricing: "الأسعار",
+    contact: "تواصل معنا",
+    login: "تسجيل الدخول",
   },
   common: {
     language: "اللغة",
