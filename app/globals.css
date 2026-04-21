@@ -35,3 +35,25 @@
 @theme {
   --color-brand: var(--color-brand);
 }
+=========
+@layer components {
+  .feature-headline {
+    background: #f5f8ff;
+    border-radius: 8px;
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .feature-headline span {
+    display: block;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background-color: var(--tenant-primary);
+  }
+}
+>>>>>>>>> Temporary merge branch 2
