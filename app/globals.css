@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-
 @layer base {
   :root {
     --color-brand: #156AE1; 
-    
     --background: #ffffff;
     --foreground: #1A202C;
   }
@@ -15,9 +13,8 @@
   }
 }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-100%)); }
+@theme {
+  --color-brand: var(--color-brand);
 }
 
 @layer utilities {
@@ -31,11 +28,6 @@
   }
 }
 
-
-@theme {
-  --color-brand: var(--color-brand);
-}
-=========
 @layer components {
   .feature-headline {
     background: #f5f8ff;
@@ -48,12 +40,12 @@
     font-size: 14px;
     margin-bottom: 24px;
   }
+  
   .feature-headline span {
     display: block;
     height: 9px;
     width: 9px;
     border-radius: 50%;
-    background-color: var(--tenant-primary);
+    background-color: var(--tenant-primary, #156AE1); 
   }
 }
->>>>>>>>> Temporary merge branch 2
