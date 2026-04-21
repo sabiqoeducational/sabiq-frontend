@@ -1,12 +1,23 @@
 import { getServerMessages } from "@/shared/i18n/server";
-
+import { AboutHero } from "@/modules/platform/components/AboutHero";
+import { AboutStats } from "@/modules/platform/components/AboutStats";
+import { AboutStory } from "@/modules/platform/components/AboutStory";
+import { AboutVisionMission } from "@/modules/platform/components/AboutVisionMission";
+import { AboutPartners } from "@/modules/platform/components/AboutPartners";
+import { AboutTeam } from "@/modules/platform/components/AboutTeam";
+import { CTA } from "@/shared/components/CTA";
 export default async function AboutPage() {
   const { messages } = await getServerMessages();
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-6 py-12 md:px-12">
-      <h1 className="text-3xl font-bold text-slate-900">{messages.platform.about.title}</h1>
-      <p className="mt-4 leading-8 text-slate-600">{messages.platform.about.body}</p>
+    <main className="bg-white">
+      <AboutHero content={messages.platform.about.hero} />
+      <AboutStats content={messages.platform.about.stats} />
+      <AboutStory content={messages.platform.about.story} />
+      <AboutVisionMission content={messages.platform.about.visionMission} />
+      <AboutPartners content={messages.platform.about.partners} />
+      <AboutTeam content={messages.platform.about.team} />
+      <CTA content={messages.platform.cta}></CTA>
     </main>
   );
 }

@@ -6,7 +6,7 @@ export default async function PlatformHomePage() {
 
   return (
     <main className="mx-auto w-full max-w-7xl">
-      <PlatformLanding copy={messages.platform.landing} />
+      <PlatformLanding copy={messages.platform.landing} />-b
     </main>
   );
 }
