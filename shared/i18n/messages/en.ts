@@ -153,6 +153,14 @@ export const en: Messages = {
       submit: "Create account",
     },
   },
+  nav: {
+    home: "Home",
+    about: "About Us",
+    features: "Features",
+    pricing: "Pricing",
+    contact: "Contact",
+    login: "Login",
+  },
   common: {
     language: "Language",
   },
