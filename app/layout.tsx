@@ -7,6 +7,7 @@ import { isRtlLocale } from "@/shared/i18n/config";
 import { getServerMessages } from "@/shared/i18n/server";
 import { getTenantTheme } from "@/shared/theme/tenantTheme";
 import "./globals.css";
+import "@/modules/platform/Css/index.css"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
