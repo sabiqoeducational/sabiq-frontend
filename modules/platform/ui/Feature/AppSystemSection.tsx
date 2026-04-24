@@ -37,7 +37,7 @@ const AppSystemSection = () => {
 
         <figure className="w-full lg:w-1/2">
           <Image
-            src="/images/app-system.svg"
+            src="/platform/Feature/images/app-system.svg"
             alt="app-system image"
             width={600}
             height={400}
