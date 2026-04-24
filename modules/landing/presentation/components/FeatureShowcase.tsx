@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { Reveal } from '@/shared/components/Reveal'
 
-// 1. واجهة البيانات لكل ميزة
 export interface ShowcaseItem {
   id: string | number;
   title: string;
@@ -11,7 +11,6 @@ export interface ShowcaseItem {
   imageUrl: string;
 }
 
-// 2. واجهة الـ Props للمكون
 interface FeatureShowcaseProps {
   badgeText?: string;
   title: React.ReactNode;
@@ -25,74 +24,81 @@ export const FeatureShowcase = ({
   subtitle,
   features,
 }: FeatureShowcaseProps) => {
-  // 3. State لتتبع الميزة النشطة (الافتراضي هو أول عنصر)
+
   const [activeFeatureId, setActiveFeatureId] = useState(features[0]?.id);
 
-  // إيجاد بيانات الميزة النشطة لعرض صورتها
   const activeFeature = features.find((f) => f.id === activeFeatureId) || features[0];
 
   return (
-    <section className="bg-white py-24 w-full flex flex-col items-center justify-center px-6 lg:px-24 overflow-hidden">
-      <div className="container-default flex flex-col items-center max-w-7xl mx-auto w-full">
-        
-        {/* الترويسة (Header) */}
-        <div className="text-center mb-16 flex flex-col items-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center justify-center gap-2 bg-blue-50/50 border border-blue-100 px-4 py-1.5 rounded-full mb-6 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
-            <span className="text-sm font-medium text-slate-700">{badgeText}</span>
-          </div>
+    <section className="bg-white w-full flex flex-col items-center justify-center px-6 lg:px-25 overflow-hidden">
+      <div className="flex flex-col items-center max-w-7xl mx-auto w-full gap-10">
 
-          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-slate-900 leading-tight mb-6">
-            {title}
-          </h2>
+        {/* ============ HEADER ============ */}
+        <div className="text-center mb-16 flex flex-col items-center max-w-3xl mx-auto gap-6">
+          <Reveal direction="up" delay={0.1}>
+            <div className="inline-flex items-center justify-center gap-2 bg-blue-50/50 border border-blue-100 px-4 py-1.5 rounded-full mb-6 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              <span className="text-sm font-medium text-slate-700">{badgeText}</span>
+            </div>
+          </Reveal>
 
-          <p className="text-lg text-slate-500 leading-relaxed">
-            {subtitle}
-          </p>
+          <Reveal direction="up" delay={0.2}>
+            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-slate-900 leading-tight ">
+              {title}
+            </h2>
+          </Reveal>
+
+          <Reveal direction="up" delay={0.3}>
+            <p className="text-lg text-slate-500 leading-relaxed">
+              {subtitle}
+            </p>
+          </Reveal>
         </div>
 
-        {/* شبكة المحتوى (Grid: صورة + قائمة) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 w-full items-center">
+        {/* =========== GRID ========= */}
+        <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 lg:h-172.5 w-full items-center">
           
-          {/* الجانب الأيمن (قائمة الفوائد) */}
-          <div className="flex flex-col w-full">
-            {features.map((feature) => {
+          {/* ======== LEFT SIDE (CARDS) ======== */}
+          <div className="flex flex-col justify-center lg:w-146 w-full gap-4">
+            {features.map((feature, index) => {
               const isActive = activeFeatureId === feature.id;
+              const cardDelay = 0.4 + (index * 0.1); 
 
               return (
-                <div
-                  key={feature.id}
-                  onClick={() => setActiveFeatureId(feature.id)}
-                  // الكلاسات دي بتعمل التصميم بتاع الكارت النشط (خط أزرق يمين، زوايا دائرية شمال، خلفية رمادي)
-                  className={`cursor-pointer transition-all duration-300 p-6 md:p-8 
-                    ${isActive 
-                      ? 'bg-slate-50 border-r-4 border-brand rounded-l-2xl' 
-                      : 'bg-transparent border-r-4 border-transparent hover:bg-slate-50/50 rounded-l-2xl opacity-70 hover:opacity-100'
-                    }`}
-                >
-                  <h3 className={`text-xl font-bold mb-3 transition-colors ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
-                    {feature.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">
-                    {feature.description}
-                  </p>
-                </div>
+                <Reveal direction="right" delay={cardDelay} key={feature.id}>
+                  <div
+                    onClick={() => setActiveFeatureId(feature.id)}
+                    className={`cursor-pointer transition-all duration-300 flex flex-col rounded-xl p-3 gap-3 
+                      ${isActive
+                        ? 'bg-slate-50 border-r-4 border-brand'
+                        : 'bg-transparent border-r-4 border-transparent hover:bg-slate-50/50 opacity-70 hover:opacity-100'
+                      }`}
+                  >
+                    <h3 className={`text-xl font-bold mb-2 md:mb-3 transition-colors ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+                      {feature.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">
+                      {feature.description}
+                    </p>
+                  </div>
+                </Reveal>
               );
             })}
           </div>
 
-          {/* الجانب الأيسر (الصورة المتغيرة) */}
-          <div className="relative w-full h-[400px] lg:h-[650px] rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200/50 order-first lg:order-last">
-            {/* استخدام key يخبر React بإعادة رسم الصورة عند تغيرها لتشغيل حركة الظهور (Fade In) */}
-            <Image
-              key={activeFeature.id}
-              src={activeFeature.imageUrl}
-              alt={activeFeature.title}
-              fill
-              className="object-cover animate-in fade-in zoom-in-[0.98] duration-700 ease-out"
-              priority
-            />
-          </div>
+          {/* ========= RIGHT SIDE (IMAGE) ========= */}
+          <Reveal direction="left" delay={0.4} className="order-first lg:order-last w-full lg:w-146 h-100 lg:h-full">
+            <div className="relative w-full h-full rounded-4xl overflow-hidden shadow-2xl shadow-slate-200/50">
+              <Image
+                key={activeFeature.id}
+                src={activeFeature.imageUrl}
+                alt={activeFeature.title}
+                fill
+                className="object-cover object-[50%_25%] animate-in fade-in zoom-in-[0.98] duration-700 ease-out"
+                priority
+              />
+            </div>
+          </Reveal>
 
         </div>
 
