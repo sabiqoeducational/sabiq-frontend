@@ -12,6 +12,7 @@ import { CTA } from "@/shared/components/CTA";
 import { HowItWorks } from '@/modules/landing/presentation/components/HowItWorks';
 import { AppDownloadBanner } from '@/modules/landing/presentation/components/AppDownloadBanner';
 import { Testimonials } from '@/modules/landing/presentation/components/Testimonials';
+import { FaqSection } from '@/shared/components/FaqSection';
 
 
 import { Reveal } from '@/shared/components/Reveal'
@@ -75,16 +76,17 @@ export default async function PlatformHomePage() {
         features={showcaseFeatures}
       />
 
-      {/* <HowItWorks steps={stepsData} /> */}
+      <HowItWorks steps={stepsData} />
 
-      {/* <AppDownloadBanner /> */}
+      <AppDownloadBanner />
 
-      {/* <Testimonials
+      <Testimonials
             title={testimonialsTitle}
             subtitle="آراء مديري المدارس والمعلمين وأولياء الأمور حول تجربتهم مع سابق وكيف ساعدهم في تطوير العملية التعليمية."
             testimonials={testimonialsData}
-         /> */}
+         />
 
+      <FaqSection />
       <CTA content={messages.platform.cta}></CTA>
 
     </main>

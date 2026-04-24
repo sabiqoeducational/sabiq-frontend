@@ -94,7 +94,7 @@ export const FeatureShowcase = ({
                 src={activeFeature.imageUrl}
                 alt={activeFeature.title}
                 fill
-                className="object-cover animate-in fade-in zoom-in-[0.98] duration-700 ease-out"
+                className="object-cover object-[50%_25%] animate-in fade-in zoom-in-[0.98] duration-700 ease-out"
                 priority
               />
             </div>
