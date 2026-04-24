@@ -40,7 +40,7 @@ export async function getLandingContent(tenant: string): Promise<LandingContent>
       primaryCta: "ابدأ الآن",
       secondaryCta: "طلب عرض تجريبي",
       imageUrl:
-        "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=80",
+        "/images/hero-section-img.png",
     },
     logos: ["مدارس الريادة", "مدارس البيان", "أكاديمية النخبة", "مدارس الأفق"],
     stats: [

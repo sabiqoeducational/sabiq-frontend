@@ -53,7 +53,7 @@ export default async function RootLayout({
             "--tenant-secondary": theme.secondary,
           } as CSSProperties
         }
-        className="min-h-full flex flex-col"
+        className="flex flex-col"
       >
         <AppProviders
           tenant={tenant}
