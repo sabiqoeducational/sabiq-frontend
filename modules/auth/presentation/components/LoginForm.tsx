@@ -2,11 +2,13 @@
 
 import { FormEvent, useState } from "react";
 import { useLoginMutation } from "@/modules/auth/presentation/hooks/useLoginMutation";
+import { useApiError } from "@/shared/hooks/useApiError";
 import { useTenant } from "@/shared/hooks/useTenant";
 
 export function LoginForm() {
   const tenant = useTenant();
   const loginMutation = useLoginMutation();
+  const errorInfo = useApiError(loginMutation.error);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,10 +47,8 @@ export function LoginForm() {
         </button>
       </form>
 
-      {loginMutation.isError ? (
-        <p className="mt-3 text-sm text-red-600">
-          {(loginMutation.error as Error).message}
-        </p>
+      {errorInfo ? (
+        <p className="mt-3 text-sm text-red-600">{errorInfo.message}</p>
       ) : null}
     </div>
   );
