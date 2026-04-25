@@ -1,9 +1,9 @@
-import { AboutHero } from "@/modules/platform/components/AboutHero";
-import { AboutPartners } from "@/modules/platform/components/AboutPartners";
-import { AboutStats } from "@/modules/platform/components/AboutStats";
-import { AboutStory } from "@/modules/platform/components/AboutStory";
-import { AboutTeam } from "@/modules/platform/components/AboutTeam";
-import { AboutVisionMission } from "@/modules/platform/components/AboutVisionMission";
+import { AboutHero } from "@/modules/platform/ui/About/AboutHero";
+import { AboutPartners } from "@/modules/platform/ui/About/AboutPartners";
+import { AboutStats } from "@/modules/platform/ui/About/AboutStats";
+import { AboutStory } from "@/modules/platform/ui/About/AboutStory";
+import { AboutTeam } from "@/modules/platform/ui/About/AboutTeam";
+import { AboutVisionMission } from "@/modules/platform/ui/About/AboutVisionMission";
 import { getServerMessages } from "@/shared/i18n/server";
 export default async function AboutPage() {
   const { messages } = await getServerMessages();

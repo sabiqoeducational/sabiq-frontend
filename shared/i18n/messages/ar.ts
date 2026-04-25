@@ -89,17 +89,17 @@ const ar = {
           {
             name: "السعودية",
             count: "+250 مدرسة",
-            flag: "/images/flags/sa.svg",
+            flag: "/platform/About/flags/sa.svg",
           },
           {
             name: "الإمارات",
             count: "+80 مدرسة",
-            flag: "/images/flags/ae.svg",
+            flag: "/platform/About/flags/ae.svg",
           },
-          { name: "مصر", count: "+120 مدرسة", flag: "/images/flags/eg.svg" },
-          { name: "قطر", count: "+250 مدرسة", flag: "/images/flags/qa.svg" },
-          { name: "الأردن", count: "+40 مدرسة", flag: "/images/flags/jo.svg" },
-          { name: "الكويت", count: "+15 مدرسة", flag: "/images/flags/kw.svg" },
+          { name: "مصر", count: "+120 مدرسة", flag: "/platform/About/flags/eg.svg" },
+          { name: "قطر", count: "+250 مدرسة", flag: "/platform/About/flags/qa.svg" },
+          { name: "الأردن", count: "+40 مدرسة", flag: "/platform/About/flags/jo.svg" },
+          { name: "الكويت", count: "+15 مدرسة", flag: "/platform/About/flags/kw.svg" },
         ],
       },
       team: {

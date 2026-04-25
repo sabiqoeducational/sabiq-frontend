@@ -32,11 +32,11 @@ export const AboutPartners = ({ content }: AboutPartnersProps) => {
   }, []);
   const schoolImages = useMemo(
     () => [
-      "/images/carousel/538e60128159a2f63f707fbdb1d590ef78fe691e.png",
-      "/images/carousel/81165b911b9b7705772ee745ccd9db7cd4fba84a.png",
-      "/images/carousel/984144ebdf47cd56039013c78bd98a1fef4d0d35.png",
-      "/images/carousel/696038dc3699b0e223dd80c3b3d591435096f678.png",
-      "/images/carousel/d67b325c7b494e5a821de696af1736226f364c69.png",
+      "/platform/About/carousel/538e60128159a2f63f707fbdb1d590ef78fe691e.png",
+      "/platform/About/carousel/81165b911b9b7705772ee745ccd9db7cd4fba84a.png",
+      "/platform/About/carousel/984144ebdf47cd56039013c78bd98a1fef4d0d35.png",
+      "/platform/About/carousel/696038dc3699b0e223dd80c3b3d591435096f678.png",
+      "/platform/About/carousel/d67b325c7b494e5a821de696af1736226f364c69.png",
     ],
     [],
   );
