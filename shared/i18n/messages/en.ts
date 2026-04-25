@@ -138,11 +138,115 @@ export const en: Messages = {
       button: "Start your free trial now",
     },
     contact: {
-      title: "Contact us",
-      name: "Name",
-      email: "Email",
-      message: "Message",
-      submit: "Send",
+      hero: {
+        badge: "We are here to help you",
+        titleblack: "Connect with ",
+        titleblue: "Sabiq Team",
+        description:
+          "Whether you have a question or want to learn more about our plans, our team is ready to assist you.",
+        ctaPrimary: "Start your free trial",
+        ctaSecondary: "Learn more",
+        trial: "14-day free trial — No credit card required — Cancel anytime",
+      },
+      secondary: {
+        info: {
+          support: {
+            title: "Technical Support",
+            email: "support@sabiq.com",
+            phone: "+966 XX XXX XXXX",
+          },
+          sales: {
+            title: "Sales & Business Inquiries",
+            email: "business@sabiq.com",
+            phone: "+966 XX XXX XXXX",
+          },
+          social: {
+            title: "Follow us on social media",
+          },
+        },
+        form: {
+          title: "Send us a message",
+          name: "Full Name",
+          email: "Email Address",
+          phone: "Phone Number",
+          subject: "Subject",
+          specialty: "Entity Type",
+          message: "Message",
+          placeholder: {
+            name: "John Doe",
+            email: "Example@gmail.com",
+            phone: "+1234567890",
+            subject: "How can we help you?",
+            specialty: "Select entity type or required service",
+            message: "Write your message here...",
+          },
+          submit: "Send Message",
+          options: {
+            specialty: [
+              "Schools",
+              "Educational Academy",
+              "Specialized Teacher",
+            ],
+            subjects: [
+              "General Inquiry",
+              "Technical Support",
+              "Request a Demo",
+              "Sales",
+            ],
+          },
+        },
+      },
+      offices: {
+        badge: "Located in the heart of the Arab region",
+        titleBlack: "Our Offices Around the ",
+        titleBlue: "Arab World",
+        subtitle:
+          "Serving schools and educational institutions in more than 6 Arab countries with a local team that understands your needs.",
+        locations: [
+          {
+            country: "Egypt Office",
+            phone: "+20121384048",
+            address: "Tahrir St, Dokki, Giza, Cairo",
+            email: "eg@sabiq.sa",
+            flag: "/platform/About/flags/eg.svg",
+          },
+          {
+            country: "Saudi Arabia Office",
+            phone: "+966121384048",
+            address: "King Fahd Road, Olaya, Riyadh",
+            email: "sa@sabiq.sa",
+            flag: "/platform/About/flags/sa.svg",
+          },
+          {
+            country: "UAE Office",
+            phone: "+971121384048",
+            address: "Sheikh Zayed Road, Dubai",
+            email: "uae@sabiq.sa",
+            flag: "/platform/About/flags/ae.svg",
+          },
+          {
+            country: "Kuwait Office",
+            phone: "+965121384048",
+            address: "Kuwait City, Al Mirqab",
+            email: "kw@sabiq.sa",
+            flag: "/platform/About/flags/kw.svg",
+          },
+          {
+            country: "Jordan Office",
+            phone: "+962121384048",
+            address: "Amman, Abdali",
+            email: "jo@sabiq.sa",
+            flag: "/platform/About/flags/jo.svg",
+          },
+          {
+            country: "Qatar Office",
+            phone: "+974121384048",
+            address: "Doha, West Bay",
+            email: "qa@sabiq.sa",
+            flag: "/platform/About/flags/qa.svg",
+          },
+        ],
+      },
     },
     register: {
       title: "Create an account",

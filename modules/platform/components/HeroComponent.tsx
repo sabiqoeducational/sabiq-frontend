@@ -1,15 +1,24 @@
 "use client";
 
-import type { Messages } from "@/shared/i18n/messages";
 import { motion } from "framer-motion";
 
-type AboutHeroProps = {
-  content: Messages["platform"]["about"]["hero"];
+type HeroContent = {
+  badge: string;
+  titleblack: string;
+  titleblue: string;
+  description: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+  trial?: string;
 };
 
-export const AboutHero = ({ content }: AboutHeroProps) => {
+type GenericHeroProps = {
+  content: HeroContent;
+};
+
+export const HeroComponent = ({ content }: GenericHeroProps) => {
   return (
-    <section className="relative -top-16 pt-16 lg:pt-20  bg-[radial-gradient(circle_at_top,_#f0f7ff_0%,_#ffffff_70%)] ">
+    <section className="relative pt-8 lg:pt-8  bg-[radial-gradient(circle_at_top,_#f0f7ff_0%,_#ffffff_70%)] ">
       <motion.div
         className="container mx-auto px-4 text-center"
         initial={{ opacity: 0, y: 0 }}
@@ -25,9 +34,9 @@ export const AboutHero = ({ content }: AboutHeroProps) => {
           </span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-[56px] font-black text-[#1e293b] mb-6 leading-tight max-w-4xl mx-auto">
+        <h1 className="text-4xl md:text-5xl lg:text-[56px] font-black text-[#1e293b] mb-6 leading-tight max-w-3xl mx-auto">
           {content.titleblack}
-          <span className="text-[#156AE1] block mt-2">{content.titleblue}</span>
+          <span className="text-[#156AE1]">{content.titleblue}</span>
         </h1>
 
         {/* Description */}

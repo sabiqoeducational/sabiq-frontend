@@ -96,10 +96,26 @@ const ar = {
             count: "+80 مدرسة",
             flag: "/platform/About/flags/ae.svg",
           },
-          { name: "مصر", count: "+120 مدرسة", flag: "/platform/About/flags/eg.svg" },
-          { name: "قطر", count: "+250 مدرسة", flag: "/platform/About/flags/qa.svg" },
-          { name: "الأردن", count: "+40 مدرسة", flag: "/platform/About/flags/jo.svg" },
-          { name: "الكويت", count: "+15 مدرسة", flag: "/platform/About/flags/kw.svg" },
+          {
+            name: "مصر",
+            count: "+120 مدرسة",
+            flag: "/platform/About/flags/eg.svg",
+          },
+          {
+            name: "قطر",
+            count: "+250 مدرسة",
+            flag: "/platform/About/flags/qa.svg",
+          },
+          {
+            name: "الأردن",
+            count: "+40 مدرسة",
+            flag: "/platform/About/flags/jo.svg",
+          },
+          {
+            name: "الكويت",
+            count: "+15 مدرسة",
+            flag: "/platform/About/flags/kw.svg",
+          },
         ],
       },
       team: {
@@ -143,12 +159,108 @@ const ar = {
         "انضم لمئات المدارس في السعودية و مصر جرّب سابق مجاناً لمدة 14 يوماً",
       button: "ابدأ تجربتك المجانية الآن",
     },
+    // ar.ts
     contact: {
-      title: "تواصل معنا",
-      name: "الاسم",
-      email: "البريد الإلكتروني",
-      message: "رسالتك",
-      submit: "إرسال",
+      hero: {
+        badge: "نحن هنا لمساعدتك",
+        titleblack: "تواصل مع  ",
+        titleblue: "فريق سابق",
+        description:
+          "سواء كان لديك سؤال أو تريد معرفة المزيد عن باقاتنا، فريقنا جاهز للرد عليك",
+        ctaPrimary: "ابدأ تجربتك المجانية",
+        ctaSecondary: "معرفة المزيد",
+        trial: "تجربة مجانية 14 يوم — بدون بطاقة ائتمان — إلغاء في أي وقت",
+      },
+      secondary: {
+        info: {
+          support: {
+            title: "الدعم الفني",
+            email: "support@sabiq.com",
+            phone: "966 XX XXX XXXX",
+          },
+          sales: {
+            title: "المبيعات والاستفسارات التجارية",
+            email: "business@sabiq.com",
+            phone: "966 XX XXX XXXX",
+          },
+          social: {
+            title: "تابعنا على وسائل التواصل الاجتماعي",
+          },
+        },
+        form: {
+          title: "أرسل لنا رسالة",
+          name: "الاسم كامل",
+          email: "الايميل الالكتروني",
+          phone: "رقم التليفون",
+          subject: "الموضوع",
+          specialty: "التخصص",
+          message: "الرسالة",
+          placeholder: {
+            name: "محمد أحمد",
+            email: "Example@gmail.com",
+            phone: "+20123456789",
+            subject: "بماذا يمكننا مساعدتك؟",
+            specialty: "اختر نوع الجهة أو الخدمة المطلوبة؟",
+            message: "اكتب رسالتك هنا...",
+          },
+          submit: "أرسل الرسالة",
+          options: {
+            specialty: ["المدارس", "أكاديمية تعليمية", "مدرس متخصص"],
+            subjects: ["استفسار عام", "دعم فني", "طلب تجربة للمنصة", "مبيعات"],
+          },
+        },
+      },
+      offices: {
+        badge: "نحن في قلب المنطقة العربية",
+        titleBlack: "مكاتبنا حول ",
+        titleBlue: "العالم العربي",
+        subtitle:
+          "نخدم المدارس والمؤسسات التعليمية في أكثر من 6 دول عربية، بفريق محلي يفهم احتياجاتك.",
+        locations: [
+          {
+            country: "مكتب مصر",
+            phone: "+20121384048",
+            address: "شارع التحرير، الدقي، الجيزة، القاهرة",
+            email: "eg@sabiq.sa",
+            flag: "/platform/About/flags/eg.svg",
+          },
+          {
+            country:  "مكتب السعودية",
+            phone: "+966121384048",
+            address: "طريق الملك فهد، العليا، الرياض",
+            email: "sa@sabiq.sa",
+            flag: "/platform/About/flags/sa.svg",
+          },
+          {
+            country: "مكتب الإمارات",
+            phone: "+971121384048",
+            address: "شارع الشيخ زايد، دبي",
+            email: "uae@sabiq.sa",
+            flag: "/platform/About/flags/ae.svg",
+          },
+          {
+            country: "مكتب الكويت",
+            phone: "+965121384048",
+            address: "مدينة الكويت، المرقاب",
+            email: "kw@sabiq.sa",
+            flag: "/platform/About/flags/kw.svg",
+          },
+          {
+            country: "مكتب الأردن",
+            phone: "+962121384048",
+            address: "عمان، العبدلي",
+            email: "jo@sabiq.sa",
+            flag: "/platform/About/flags/jo.svg",
+          },
+          {
+            country: "مكتب قطر",
+            phone: "+974121384048",
+            address: "الدوحة، الخليج الغربي",
+            email: "qa@sabiq.sa",
+            flag: "/platform/About/flags/qa.svg",
+          },
+        ],
+      },
     },
     register: {
       title: "إنشاء حساب جديد",
