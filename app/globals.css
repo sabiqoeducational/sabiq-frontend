@@ -19,6 +19,10 @@
     background-color: var(--background);
     color: var(--foreground);
   }
+
+  *{
+    font-family: "Avenir Arabic", sans-serif;
+  }
 }
 
 @theme {

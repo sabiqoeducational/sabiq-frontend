@@ -1,6 +1,27 @@
+'use client'
 import Image from "next/image";
-
+import { motion, Variants } from "framer-motion";
 const AppSystemSection = () => {
+  const parentVariants: Variants = {
+    initial: { x: 50, opacity: 0 },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const childVariants = (direction: "right" | "left") => ({
+    initial: { x: direction === "right" ? 50 : -50, opacity: 0 },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.6, delay: 0.3 },
+    },
+  });
   return (
     <section className="flex flex-col items-center m-4">
       <div className="feature-headline">
@@ -11,8 +32,17 @@ const AppSystemSection = () => {
         ما هي منصة
         <span className="text-(--tenant-primary)"> سابق ؟</span>
       </h2>
-      <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-        <div className="flex flex-col justify-between py-2 lg:w-1/2">
+      <motion.div
+        initial="initial"
+        whileInView={'animate'}
+        variants={parentVariants}
+        viewport={{ once: true }}
+        className="flex flex-col lg:flex-row gap-8 items-stretch"
+      >
+        <motion.div
+          variants={childVariants("right")}
+          className="flex flex-col justify-between py-2 lg:w-1/2"
+        >
           <p className="text-base font-medium leading-6 md:text-lg lg:leading-7">
             منصة <span className="text-(--tenant-primary)">سابق</span> هي منصة
             رقمية متكاملة صُممت خصيصًا لمساعدة المدارس على إدارة العمليات
@@ -33,9 +63,12 @@ const AppSystemSection = () => {
             الروتينية، مما يمنح فريق العمل فرصة أكبر للتركيز على تطوير العملية
             التعليمية.
           </p>
-        </div>
+        </motion.div>
 
-        <figure className="w-full lg:w-1/2">
+        <motion.figure
+          variants={childVariants("left")}
+          className="w-full lg:w-1/2"
+        >
           <Image
             src="/platform/Feature/images/app-system.svg"
             alt="app-system image"
@@ -43,8 +76,8 @@ const AppSystemSection = () => {
             height={400}
             className="w-full h-full object-contain"
           />
-        </figure>
-      </div>
+        </motion.figure>
+      </motion.div>
     </section>
   );
 };

@@ -29,7 +29,7 @@ function detectLocale(request: NextRequest): Locale {
   return defaultLocale;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const host = request.headers.get("host") ?? "";
   const platform = isPlatformHost(host);
   const tenant = extractTenantFromHost(host) ?? "public";

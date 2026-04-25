@@ -25,7 +25,7 @@ export const HeroSection = ({ heroData }: HeroSectionProps) => {
         <Reveal direction="right" delay={0.2}>
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-gray-900">
             {heroData.title.split(' ').map((word, i) => (
-              <span key={i} className={word.includes('سبيق') ? 'text-brand' : ''}>
+              <span key={i} className={word.includes('سابق') ? 'text-brand' : ''}>
                 {word}{' '}
               </span>
             ))}

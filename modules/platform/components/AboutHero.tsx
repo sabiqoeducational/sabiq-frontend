@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import type { Messages } from "@/shared/i18n/messages";
 import { motion } from "framer-motion";
 
@@ -10,7 +9,7 @@ type AboutHeroProps = {
 
 export const AboutHero = ({ content }: AboutHeroProps) => {
   return (
-    <section className="relative pt-16 lg:pt-20  bg-[radial-gradient(circle_at_top,_#f0f7ff_0%,_#ffffff_70%)]">
+    <section className="relative -top-16 pt-16 lg:pt-20  bg-[radial-gradient(circle_at_top,_#f0f7ff_0%,_#ffffff_70%)] ">
       <motion.div
         className="container mx-auto px-4 text-center"
         initial={{ opacity: 0, y: 0 }}

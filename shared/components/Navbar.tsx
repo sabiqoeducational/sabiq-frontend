@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react"; 
+import { useTranslations } from "@/shared/context/LocaleContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTranslations } from "@/shared/context/LocaleContext";
-import { Reveal } from '@/shared/components/Reveal';
-import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useState } from "react";
 import { Button } from "./Button";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Navbar = () => {
   const t = useTranslations();

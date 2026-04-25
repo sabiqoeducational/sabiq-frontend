@@ -1,27 +1,22 @@
 
-import Image from 'next/image';
-import { getLandingContent } from '@/modules/landing/services/landingService';
-import { Navbar } from '@/shared/components/Navbar';
-import { HeroSection } from '@/modules/landing/presentation/components/HeroSection';
-import { SchoolProof } from '@/modules/landing/presentation/components/SchoolProof';
 import { AboutStats } from '@/modules/landing/presentation/components/AboutStats';
-import { PlatformModules } from '@/modules/landing/presentation/components/PlatformModules';
-import { FeatureShowcase } from '@/modules/landing/presentation/components/FeatureShowcase';
-import { getServerMessages } from "@/shared/i18n/server";
-import { CTA } from "@/shared/components/CTA";
-import { HowItWorks } from '@/modules/landing/presentation/components/HowItWorks';
 import { AppDownloadBanner } from '@/modules/landing/presentation/components/AppDownloadBanner';
+import { FeatureShowcase } from '@/modules/landing/presentation/components/FeatureShowcase';
+import { HeroSection } from '@/modules/landing/presentation/components/HeroSection';
+import { HowItWorks } from '@/modules/landing/presentation/components/HowItWorks';
+import { PlatformModules } from '@/modules/landing/presentation/components/PlatformModules';
+import { SchoolProof } from '@/modules/landing/presentation/components/SchoolProof';
 import { Testimonials } from '@/modules/landing/presentation/components/Testimonials';
-import { FaqSection } from '@/shared/components/FaqSection';
+import { getLandingContent } from '@/modules/landing/services/landingService';
+import Image from 'next/image';
 
 
-import { Reveal } from '@/shared/components/Reveal'
 // IMPORT DATA FROM LANDINGDATA - CONSTANTS
 import {
   aboutDescription,
-  platformStats,
   modulesData,
   modulesTitle,
+  platformStats,
   showcaseFeatures,
   showcaseTitle,
   stepsData,
@@ -30,13 +25,11 @@ import {
 } from '@/modules/landing/constants/landingData';
 
 export default async function PlatformHomePage() {
-  const { messages } = await getServerMessages();
 
   const landingData = await getLandingContent('public');
 
   return (
-    <main>
-
+    <main className='relative -top-16'>
       {/* ========= HERO AND NAV BAR ========= */}
       <div className="relative flex flex-col">
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -50,9 +43,7 @@ export default async function PlatformHomePage() {
         </div>
 
         <div className="relative">
-          <Reveal direction="down" >
-            <Navbar />
-          </Reveal>
+          
           <HeroSection heroData={landingData.hero} />
         </div>
       </div>
@@ -86,8 +77,7 @@ export default async function PlatformHomePage() {
             testimonials={testimonialsData}
          />
 
-      <FaqSection />
-      <CTA content={messages.platform.cta}></CTA>
+      
 
     </main>
   );

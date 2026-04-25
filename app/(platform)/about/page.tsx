@@ -1,11 +1,10 @@
-import { getServerMessages } from "@/shared/i18n/server";
 import { AboutHero } from "@/modules/platform/components/AboutHero";
+import { AboutPartners } from "@/modules/platform/components/AboutPartners";
 import { AboutStats } from "@/modules/platform/components/AboutStats";
 import { AboutStory } from "@/modules/platform/components/AboutStory";
-import { AboutVisionMission } from "@/modules/platform/components/AboutVisionMission";
-import { AboutPartners } from "@/modules/platform/components/AboutPartners";
 import { AboutTeam } from "@/modules/platform/components/AboutTeam";
-import { CTA } from "@/shared/components/CTA";
+import { AboutVisionMission } from "@/modules/platform/components/AboutVisionMission";
+import { getServerMessages } from "@/shared/i18n/server";
 export default async function AboutPage() {
   const { messages } = await getServerMessages();
 
@@ -17,7 +16,6 @@ export default async function AboutPage() {
       <AboutVisionMission content={messages.platform.about.visionMission} />
       <AboutPartners content={messages.platform.about.partners} />
       <AboutTeam content={messages.platform.about.team} />
-      <CTA content={messages.platform.cta}></CTA>
     </main>
   );
 }
