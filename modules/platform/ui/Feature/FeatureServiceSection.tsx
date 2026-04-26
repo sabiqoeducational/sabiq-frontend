@@ -1,6 +1,7 @@
+'use client'
 import { IFeature } from "@/shared/types/featuePage";
 import FeatureItem from "./FeatureItem";
-
+import {motion} from "framer-motion"
 const FeatureServiceSection = () => {
   const featuresData: IFeature[] = [
     {
@@ -95,18 +96,31 @@ const FeatureServiceSection = () => {
 
   return (
     <section className="flex flex-col items-center m-4">
-      <div className="feature-headline">
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 , transition: { duration: 0.5 , delay: 0.2 } }}
+        viewport={{ once: true }}
+        className="feature-headline"
+      >
         وحدات المنصة
         <span></span>
-      </div>
-      <h2 className="text-3xl text-center w-80 font-semibold mb-4 md:text-5xl md:w-150 md:leading-15 ">
+      </motion.div>
+      <motion.h2 
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 , transition: { duration: 0.5 , delay: 0.4 } }}
+        viewport={{ once: true }}
+      className="text-3xl text-center w-80 font-semibold mb-4 md:text-5xl md:w-150 md:leading-15 ">
         ماذا تقدم منصة
         <span className="text-(--tenant-primary) "> سابق لمدرستك </span>
-      </h2>
-      <p className="text-base text-slate-400 text-center mb-8 md:w-150 md:text-lg">
+      </motion.h2>
+      <motion.p 
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 , transition: { duration: 0.5 , delay: 0.6 } }}
+      viewport={{ once: true }}
+      className="text-base text-slate-400 text-center mb-8 md:w-150 md:text-lg">
         8 وحدات متكاملة كل و حدة حلّت مشكلة حقيقية سمعناها من مئات المديرين في
         السعودية و مصر.
-      </p>
+      </motion.p>
       <div className="flex flex-col gap-10">
          {featuresData.map((item, index) => (
         <FeatureItem key={index} data={item} index={index} />

@@ -1,6 +1,6 @@
-'use client'
-import Image from "next/image";
+"use client";
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 const AppSystemSection = () => {
   const parentVariants: Variants = {
     initial: { x: 50, opacity: 0 },
@@ -24,23 +24,58 @@ const AppSystemSection = () => {
   });
   return (
     <section className="flex flex-col items-center m-4">
-      <div className="feature-headline">
+      <motion.div
+        initial={"initial"}
+        whileInView={"animate"}
+        variants={{
+          initial: { y: -50, opacity: 0 },
+          animate: {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 0.4,
+              ease: "easeOut",
+              delay: 1,
+            },
+          },
+        }}
+        className="feature-headline"
+      >
         نظام التطبيق
         <span></span>
-      </div>
-      <h2 className="text-3xl text-center w-70 font-semibold mb-10 md:text-5xl md:w-150 md:leading-15 ">
+      </motion.div>
+      <motion.h2
+        initial={"initial"}
+        whileInView={"animate"}
+        variants={{
+          initial: { y: 50, opacity: 0 },
+          animate: {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 0.4,
+              ease: "easeOut",
+              delay: 1.2,
+            },
+          },
+        }}
+        className="text-3xl text-center w-70 font-semibold mb-10 md:text-5xl md:w-150 md:leading-15 "
+      >
         ما هي منصة
         <span className="text-(--tenant-primary)"> سابق ؟</span>
-      </h2>
+      </motion.h2>
       <motion.div
         initial="initial"
-        whileInView={'animate'}
+        whileInView={"animate"}
         variants={parentVariants}
         viewport={{ once: true }}
         className="flex flex-col lg:flex-row gap-8 items-stretch"
       >
         <motion.div
+          initial="initial"
+          whileInView={"animate"}
           variants={childVariants("right")}
+          viewport={{ once: true }}
           className="flex flex-col justify-between py-2 lg:w-1/2"
         >
           <p className="text-base font-medium leading-6 md:text-lg lg:leading-7">
@@ -66,7 +101,10 @@ const AppSystemSection = () => {
         </motion.div>
 
         <motion.figure
+          initial="initial"
+          whileInView={"animate"}
           variants={childVariants("left")}
+          viewport={{ once: true }}
           className="w-full lg:w-1/2"
         >
           <Image

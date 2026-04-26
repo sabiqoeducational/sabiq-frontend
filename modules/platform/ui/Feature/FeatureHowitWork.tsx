@@ -1,6 +1,7 @@
+'use client'
 import { featureCard } from "@/shared/types/featuePage";
 import HowWorksCard from "./HowWorksCard";
-
+import {motion} from "framer-motion"
 const FeatureHowitWork = () => {
   const dataCards: featureCard[] = [
     {
@@ -31,23 +32,45 @@ const FeatureHowitWork = () => {
 
   return (
     <section className="flex flex-col items-center m-4">
-      <div className="feature-headline">
+      <motion.div 
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      viewport={{once:true}}
+      className="feature-headline">
         كيف يعمل سابق ؟<span></span>
-      </div>
-      <h2 className="text-3xl text-center w-80 font-semibold mb-4 md:text-5xl md:w-150 md:leading-15 ">
+      </motion.div>
+      <motion.h2 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{once:true}}
+        className="text-3xl text-center w-80 font-semibold mb-4 md:text-5xl md:w-150 md:leading-15 "
+      >
         ابدأ استخدام المنصة في
         <span className="text-(--tenant-primary) "> خطوات بسيطة</span>
-      </h2>
-      <p className="text-base text-slate-400 text-center mb-8 md:w-150 md:text-lg">
+      </motion.h2>
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        viewport={{once:true}}
+        className="text-base text-slate-400 text-center mb-8 md:w-150 md:text-lg">
         ابدأ استخدام منصة سابق في خطوات بسيطة، لتتمكن مدرستك من إدارة العمليات
         التعليمية و الإدارية بكفاءة و سهولة.
-      </p>
+      </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <motion.div 
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        viewport={{once:true}}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
         {dataCards.map((card) => (
           <HowWorksCard key={card.id} props = {card} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

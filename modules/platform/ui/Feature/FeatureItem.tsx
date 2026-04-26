@@ -1,11 +1,14 @@
 import { FeatureProps } from "@/shared/types/featuePage";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 const FeatureItem = ({ data, index }: FeatureProps) => {
   const isReversed = index % 2 !== 0;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: data?.reverse ? -50 : 50 }}
+      whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5, } }}
+      viewport={{ once: true }}
       className={`flex flex-col items-center gap-6 md:gap-10  ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"}`}
     >
       <figure className="relative w-full bg-(--bg-secondary) flex items-center justify-center rounded-lg lg:w-1/2 overflow-hidden">
@@ -61,7 +64,7 @@ const FeatureItem = ({ data, index }: FeatureProps) => {
           {data.description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
