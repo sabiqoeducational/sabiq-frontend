@@ -1,4 +1,4 @@
-import { AboutHero } from "@/modules/platform/ui/About/AboutHero";
+import {  HeroComponent } from "@/modules/platform/components/HeroComponent";
 import { AboutPartners } from "@/modules/platform/ui/About/AboutPartners";
 import { AboutStats } from "@/modules/platform/ui/About/AboutStats";
 import { AboutStory } from "@/modules/platform/ui/About/AboutStory";
@@ -10,7 +10,7 @@ export default async function AboutPage() {
 
   return (
     <main className="bg-white">
-      <AboutHero content={messages.platform.about.hero} />
+      <HeroComponent content={messages.platform.about.hero} />
       <AboutStats content={messages.platform.about.stats} />
       <AboutStory content={messages.platform.about.story} />
       <AboutVisionMission content={messages.platform.about.visionMission} />
