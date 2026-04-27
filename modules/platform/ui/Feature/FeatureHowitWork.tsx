@@ -31,7 +31,7 @@ const FeatureHowitWork = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center m-4">
+    <section className="flex flex-col items-center m-4 lg:mx-24 ">
       <motion.div 
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}

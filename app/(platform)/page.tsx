@@ -23,6 +23,7 @@ import {
   testimonialsData,
   testimonialsTitle
 } from '@/modules/landing/constants/landingData';
+import FeatureHowitWork from '@/modules/platform/ui/Feature/FeatureHowitWork';
 
 export default async function PlatformHomePage() {
 
@@ -67,7 +68,9 @@ export default async function PlatformHomePage() {
         features={showcaseFeatures}
       />
 
-      <HowItWorks steps={stepsData} />
+      {/* <HowItWorks steps={stepsData} /> */}
+
+      <FeatureHowitWork />
 
       <AppDownloadBanner />
 

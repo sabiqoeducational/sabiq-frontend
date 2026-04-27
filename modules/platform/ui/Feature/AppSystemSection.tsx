@@ -23,7 +23,7 @@ const AppSystemSection = () => {
     },
   });
   return (
-    <section className="flex flex-col items-center m-4">
+    <section className="flex flex-col items-center m-4 lg:mx-24 ">
       <motion.div
         initial={"initial"}
         whileInView={"animate"}
@@ -76,7 +76,7 @@ const AppSystemSection = () => {
           whileInView={"animate"}
           variants={childVariants("right")}
           viewport={{ once: true }}
-          className="flex flex-col justify-between py-2 lg:w-1/2"
+          className="flex flex-col justify-around py-2 lg:w-1/2"
         >
           <p className="text-base font-medium leading-6 md:text-lg lg:leading-7">
             منصة <span className="text-(--tenant-primary)">سابق</span> هي منصة

@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="flex flex-col bg-(--bg-secondary) p-4">
       <div className="grid  grid-cols-1 grid-rows-1 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-4  gap-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:col-span-3">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:col-span-3 lg:justify-items-center">
           <div className="flex flex-col">
             <h3 className="font-bold text-3xl text-(--tenant-primary) mb-4">
               سابق
@@ -98,9 +98,9 @@ const Footer = () => {
                   width={24}
                   height={24}
                 />
-                <span className="text-(--text-secondary) text-sm">
+                <bdi className="text-(--text-secondary) text-sm">
                   +096 500 000 000
-                </span>
+                </bdi>
               </li>
               <li className="flex gap-2">
                 <Image
@@ -164,7 +164,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-end p-4 border-t border-[#D8DCF0] text-xs font-medium">
+      <div className="flex justify-center items-end pt-4 border-t border-[#D8DCF0] text-xs font-medium">
         جميع الحقوق محفوظة لدى 2026 &copy; Sapiq
       </div>
     </div>
