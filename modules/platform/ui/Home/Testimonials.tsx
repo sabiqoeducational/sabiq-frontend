@@ -44,10 +44,10 @@ export const Testimonials = ({
 
   return (
     <section className="bg-white py-24 w-full flex flex-col items-center justify-center overflow-hidden" dir="rtl">
-      <div className="container-default max-w-7xl mx-auto w-full px-6 lg:px-24 relative">
+      <div className="container-default flex justify-center max-w-7xl mx-auto w-full px-6 lg:px-24 relative">
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div className="text-center md:text-right w-full">
+          <div className="text-center w-full">
             <Reveal direction="up" delay={0.1}>
               <div className="inline-flex items-center justify-center gap-2 bg-blue-50/50 border border-blue-100 px-4 py-1.5 rounded-full mb-6 shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
@@ -109,6 +109,7 @@ export const Testimonials = ({
                       ${isActive ? 'opacity-100 translate-y-0 mb-6' : 'opacity-0 translate-y-8 h-0 mb-0 pointer-events-none'}
                     `}
                   >
+                    
                     <p className="text-white text-xl lg:text-2xl font-bold leading-relaxed line-clamp-4 text-right">
                       {t.quote}
                     </p>
