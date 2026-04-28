@@ -1,4 +1,4 @@
-import {  HeroComponent } from "@/modules/platform/components/HeroComponent";
+import { HeroComponent } from "@/modules/platform/components/HeroComponent";
 import { AboutPartners } from "@/modules/platform/ui/About/AboutPartners";
 import { AboutStats } from "@/modules/platform/ui/About/AboutStats";
 import { AboutStory } from "@/modules/platform/ui/About/AboutStory";
@@ -9,7 +9,7 @@ export default async function AboutPage() {
   const { messages } = await getServerMessages();
 
   return (
-    <main className="bg-white">
+    <main className="bg-white ">
       <HeroComponent content={messages.platform.about.hero} />
       <AboutStats content={messages.platform.about.stats} />
       <AboutStory content={messages.platform.about.story} />

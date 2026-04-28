@@ -56,7 +56,7 @@ export const ContactSection = ({ content }: ContactSectionProps) => {
       {" "}
       <div className="container mx-auto px-4 max-w-6xl">
         {" "}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 2xl:gap-12">
           {" "}
           <Reveal
             direction="right"
@@ -343,7 +343,7 @@ export const ContactSection = ({ content }: ContactSectionProps) => {
               phone={content.info.sales.phone}
             />
             {/* Social Card */}
-            <div className="bg-[#F8FAFF] p-5 rounded-xl shadow-sm  flex flex-col items-start text-start">
+            <div className="bg-[#F8FAFF] p-5 max-w-100 rounded-xl shadow-sm  flex flex-col items-start text-start">
               <div className="w-14 h-14 bg-[#156AE133] text-[#156AE1] rounded-full flex items-center justify-center mb-4">
                 <Image
                   src="/platform/Contact/icons/Group 47219 (2).svg"
@@ -419,7 +419,7 @@ const InfoCard = ({
   email: string;
   phone: string;
 }) => (
-  <div className="bg-[#F8FAFF] p-5 rounded-xl shadow-sm  flex flex-col items-start text-start group hover:shadow-md transition-shadow">
+  <div className="bg-[#F8FAFF] p-5 max-w-100 rounded-xl shadow-sm  flex flex-col items-start text-start group hover:shadow-md transition-shadow">
     <div className="w-14 h-14 bg-[#156AE133] text-[#156AE1] rounded-full flex items-center justify-center mb-4">
       {icon}
     </div>

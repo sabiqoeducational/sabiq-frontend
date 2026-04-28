@@ -69,7 +69,7 @@ export const AboutStory = ({ content }: AboutStoryProps) => {
                     <div className="shrink-0">
                       <CheckCircle2 className="w-6 h-6 text-white fill-[#156AE1]" />
                     </div>
-                    <span className="text-md font-medium text-[#6B7280]">
+                    <span className="text-md font-light text-[#6B7280] opacity-90 ">
                       {feature}
                     </span>
                   </div>

@@ -65,42 +65,44 @@ export const AboutVisionMission = ({ content }: VisionMissionProps) => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mx-5">
-          {content.items.map((item, index) => {
-            return (
-              <motion.div
-                key={index}
-                className="bg-[#F5F8FF] px-2 py-4 rounded-2xl border-2 border-[#D8DCF0] shadow-sm hover:border-[#156AE1] transition-all text-center flex flex-col items-center"
-                initial={{
-                  opacity: 0,
-                  x: 50,
-                }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.4,
-                }}
-              >
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-2">
-                  <div className="bg-[#156AE1] p-2.5 rounded-full">
-                    {icons[index]}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mx-5 2xl:gap-10">
+            {content.items.map((item, index) => {
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-[#F5F8FF] px-2 py-4 rounded-2xl border-2 border-[#D8DCF0] shadow-sm hover:border-[#156AE1] transition-all text-center flex flex-col items-center"
+                  initial={{
+                    opacity: 0,
+                    x: 50,
+                  }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.4,
+                  }}
+                >
+                  {/* Icon */}
+                  <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-2">
+                    <div className="bg-[#156AE1] p-2.5 rounded-full">
+                      {icons[index]}
+                    </div>
                   </div>
-                </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-bold text-[#0D1530] mb-2">
-                  {item.title}
-                </h3>
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-[#0D1530] mb-2">
+                    {item.title}
+                  </h3>
 
-                {/* Description */}
-                <p className="text-gray-500 text-sm leading-5 max-w-xs">
-                  {item.desc}
-                </p>
-              </motion.div>
-            );
-          })}
+                  {/* Description */}
+                  <p className="text-gray-500 text-sm leading-5 max-w-sm md:max-w-xs">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
