@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Reveal } from '@/shared/components/Reveal'
+import { Reveal } from '@/shared/components/Reveal';
 
 export interface ShowcaseItem {
   id: string | number;
@@ -27,10 +27,11 @@ export const FeatureShowcase = ({
 
   const [activeFeatureId, setActiveFeatureId] = useState(features[0]?.id);
 
-  const activeFeature = features.find((f) => f.id === activeFeatureId) || features[0];
+  const activeIndex = features.findIndex((f) => f.id === activeFeatureId);
+  const activeFeature = features[activeIndex] || features[0];
 
   return (
-    <section className="bg-white w-full flex flex-col items-center justify-center px-6 lg:px-25 overflow-hidden">
+    <section className="bg-white w-full flex flex-col items-center justify-center px-6 lg:px-25 overflow-hidden pb-22.5" dir="rtl">
       <div className="flex flex-col items-center max-w-7xl mx-auto w-full gap-10">
 
         {/* ============ HEADER ============ */}
@@ -57,27 +58,36 @@ export const FeatureShowcase = ({
 
         {/* =========== GRID ========= */}
         <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 lg:h-172.5 w-full items-center">
-          
+
           {/* ======== LEFT SIDE (CARDS) ======== */}
-          <div className="flex flex-col justify-center lg:w-146 w-full gap-4">
+          <div className="flex flex-col justify-center lg:w-146 w-full">
             {features.map((feature, index) => {
               const isActive = activeFeatureId === feature.id;
-              const cardDelay = 0.4 + (index * 0.1); 
+              const cardDelay = 0.4 + (index * 0.1);
 
               return (
                 <Reveal direction="right" delay={cardDelay} key={feature.id}>
                   <div
                     onClick={() => setActiveFeatureId(feature.id)}
-                    className={`cursor-pointer transition-all duration-300 flex flex-col rounded-xl p-3 gap-3 
-                      ${isActive
-                        ? 'bg-slate-50 border-r-4 border-brand'
-                        : 'bg-transparent border-r-4 border-transparent hover:bg-slate-50/50 opacity-70 hover:opacity-100'
+                    className={`relative cursor-pointer transition-all duration-300 flex flex-col pr-8 py-6 gap-2 
+            ${isActive
+                        ? 'bg-transparent'
+                        : 'bg-transparent opacity-60 hover:opacity-100'
                       }`}
                   >
-                    <h3 className={`text-xl font-bold mb-2 md:mb-3 transition-colors ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+                    {/* ============== PROGRESS BAR ============== */}
+                    <div
+                      className={`absolute right-0 top-0 bottom-0 w-[6px] transition-colors duration-300 
+              ${isActive ? 'bg-brand' : 'bg-slate-200'}
+              ${index === 0 ? 'rounded-t-full' : ''} 
+              ${index === features.length - 1 ? 'rounded-b-full' : ''}
+            `}
+                    />
+
+                    <h3 className={`text-xl font-bold transition-colors ${isActive ? 'text-[#0D1530]' : 'text-slate-600'}`}>
                       {feature.title}
                     </h3>
-                    <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">
+                    <p className={`text-sm md:text-base leading-relaxed font-medium transition-colors ${isActive ? 'text-slate-500' : 'text-slate-400'}`}>
                       {feature.description}
                     </p>
                   </div>
@@ -88,7 +98,7 @@ export const FeatureShowcase = ({
 
           {/* ========= RIGHT SIDE (IMAGE) ========= */}
           <Reveal direction="left" delay={0.4} className="order-first lg:order-last w-full lg:w-146 h-100 lg:h-full">
-            <div className="relative w-full h-full rounded-4xl overflow-hidden shadow-2xl shadow-slate-200/50">
+            <div className="relative w-full h-full rounded-[32px] overflow-hidden shadow-2xl shadow-slate-200/50 bg-slate-50">
               <Image
                 key={activeFeature.id}
                 src={activeFeature.imageUrl}
