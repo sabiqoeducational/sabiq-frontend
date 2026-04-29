@@ -57,7 +57,7 @@ const PricingComponent = () => {
               }}
               className={`w-6 h-6 ${selectedPlan === plan.id ? "bg-white" : "bg-gray-700"}`}
             />
-            <span className="text-sm font-medium">{plan.title}</span>
+            <span className="text-xs font-medium text-nowrap md:text-sm">{plan.title}</span>
           </div>
         ))}
       </div>

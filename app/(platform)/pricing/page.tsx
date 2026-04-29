@@ -1,5 +1,6 @@
 import FeatureHeroSection from "@/modules/platform/ui/Feature/FeatureHeroSection";
 import PricingComponent from "@/modules/platform/ui/pricing/PricingComponent";
+import PricingPlans from "@/modules/platform/ui/pricing/PricingPlans";
 
 const page = () => {
   return (
@@ -12,6 +13,7 @@ const page = () => {
         isNumbers={false}
       />
       <PricingComponent />
+      <PricingPlans />
     </section>
   );
 };
