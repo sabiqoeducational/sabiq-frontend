@@ -1,7 +1,7 @@
 "use client";
 import { pricingPlan } from "@/shared/types/featuePage";
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 const PricingComponent = () => {
   const [selectedPlan, setSelectedPlan] = useState<number>(1);
   const [selectedTuitionFees, setSelectedTuitionFees] = useState<number>(1);
@@ -37,7 +37,12 @@ const PricingComponent = () => {
 
   return (
     <section className="flex flex-col gap-10 items-center m-4 lg:mx-24 ">
-      <div className="flex gap-2 bg-(--bg-secondary) border border-[#d8dcf0] rounded-full p-1">
+      <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5  , delay: 0.8}}
+
+      className="flex gap-2 bg-(--bg-secondary) border border-[#d8dcf0] rounded-full p-1">
         {pricingPlans.map((plan) => (
           <div
             key={plan.id}
@@ -60,9 +65,13 @@ const PricingComponent = () => {
             <span className="text-xs font-medium text-nowrap md:text-sm">{plan.title}</span>
           </div>
         ))}
-      </div>
+      </motion.div>
       <div className="flex flex-col items-center">
-        <div className="flex gap-2 bg-(--bg-secondary) border border-[#d8dcf0] rounded-full p-1">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 , delay: 1}}
+        className="flex gap-2 bg-(--bg-secondary) border border-[#d8dcf0] rounded-full p-1">
           {tuitionFees.map((fee) => (
             <div
               key={fee.id}
@@ -76,9 +85,8 @@ const PricingComponent = () => {
               <span className="text-sm font-medium">{fee.title} {fee.id === 2 && <span className={`${selectedTuitionFees === fee.id ? 'text-white' : 'text-(--tenant-primary)'}`}>(وفر 20%)</span>}</span>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
-      
     </section>
   );
 };

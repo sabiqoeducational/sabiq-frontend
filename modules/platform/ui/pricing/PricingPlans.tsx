@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-
+import {motion} from "framer-motion";
 const PricingPlans = () => {
   const dataPlans = [
     {
@@ -143,7 +144,11 @@ const PricingPlans = () => {
     },
   ];
   return (
-    <div className="flex flex-col gap-6 w-full lg:grid lg:grid-cols-3">
+    <motion.div
+    initial={{ opacity: 0, x: 20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 ,delay:1.2 }}
+    className="flex flex-col gap-6 w-full lg:grid lg:grid-cols-3">
       {dataPlans.map((plan, index) => (
         <div
           key={index}
@@ -209,7 +214,7 @@ const PricingPlans = () => {
           >{plan.buttonText}</button>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
