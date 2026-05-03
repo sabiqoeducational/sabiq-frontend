@@ -60,7 +60,7 @@ const FeatureItem = ({ data, index }: FeatureProps) => {
         <h4 className="text-center w-full lg:text-right text-[20px] font-semibold md:text-4xl">
           {data.title}
         </h4>
-        <p className="text-center lg:text-right text-sm text-(--text-secondary) font-normal md:text-base">
+        <p className="text-center lg:text-right text-sm text-(--text-secondary) font-normal md:text-base lg:w-3/4">
           {data.description}
         </p>
       </div>

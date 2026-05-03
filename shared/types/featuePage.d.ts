@@ -31,3 +31,9 @@ export interface JobCard {
   description: string;
   image: string;
 }
+
+export interface pricingPlan {
+  id: number;
+  title: string;
+  icongURL: string;
+} 

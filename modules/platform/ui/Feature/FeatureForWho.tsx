@@ -77,7 +77,7 @@ const SabeqSlider = () => {
   };
 
   return (
-    <section className="flex flex-col items-center m-4">
+    <section className="flex flex-col items-center m-4 lg:mx-24 ">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ const SabeqSlider = () => {
         viewport={{ once: true }}
         className="feature-headline"
       >
-        كيف يعمل سابق ؟<span></span>
+        لمن صمم سابق ؟<span></span>
       </motion.div>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
@@ -94,8 +94,10 @@ const SabeqSlider = () => {
         viewport={{ once: true }}
         className="text-3xl text-center w-80 font-semibold mb-4 md:text-5xl md:w-150 md:leading-15 "
       >
-        ابدأ استخدام المنصة في
-        <span className="text-(--tenant-primary) "> خطوات بسيطة</span>
+        مصمم
+        <span className="text-(--tenant-primary) "> سابق </span>
+        لك, أيا كان
+        <span className="text-(--tenant-primary) "> دورك</span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
@@ -104,8 +106,8 @@ const SabeqSlider = () => {
         viewport={{ once: true }}
         className="text-base text-slate-400 text-center mb-8 md:w-150 md:text-lg"
       >
-        ابدأ استخدام منصة سابق في خطوات بسيطة، لتتمكن مدرستك من إدارة العمليات
-        التعليمية و الإدارية بكفاءة و سهولة.
+        يمنحك سابق الأدوات التي تحتاجها بالضبط،سواء كنت مديرًا أو معلمًا أو
+        وليًا للأمر.{" "}
       </motion.p>
 
       <motion.div
@@ -116,12 +118,13 @@ const SabeqSlider = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
       ></motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
-        viewport={{once:true}}
-      className="relative w-full group p-4">
+        viewport={{ once: true }}
+        className="relative w-full group p-4"
+      >
         <div
           ref={scrollRef}
           className="flex overflow-x-auto gap-5 scroll-smooth no-scrollbar"

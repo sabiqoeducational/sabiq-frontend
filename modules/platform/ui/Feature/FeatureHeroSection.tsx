@@ -1,7 +1,14 @@
 "use client";
 import { feature } from "@/shared/types/featuePage";
 import { motion } from "framer-motion";
-const FeatureHeroSection = () => {
+type Props = {
+  head: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  isNumbers?: boolean;
+};
+const FeatureHeroSection = ({head , title, subtitle ,description , isNumbers = true}: Props) => {
   const featureNumbers: feature[] = [
     {
       number: "500+",
@@ -21,7 +28,7 @@ const FeatureHeroSection = () => {
     },
   ];
   return (
-    <section className="flex flex-col items-center m-4">
+    <section className="flex flex-col items-center m-4 lg:mx-24 ">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -29,17 +36,15 @@ const FeatureHeroSection = () => {
         className="flex flex-col items-center"
       >
         <div className="bg-(--tenant-primary) text-white px-4 py-1 rounded-lg flex items-center gap-2 mb-8 ">
-          تعرف علي الوحدات{" "}
+         {head}
           <span className="inline-block bg-white w-2 h-2 rounded-full "></span>
         </div>
         <h2 className="text-3xl text-center w-70 font-semibold mb-5 md:text-5xl md:w-150 md:leading-15">
-          نظام رقمي متكامل لإدارة المدارس{" "}
-          <span className="text-(--tenant-primary)">بكفاءة واحتراف</span>
+          {title}
+          <span className="text-(--tenant-primary)"> {subtitle}</span>
         </h2>
         <p className="text-base text-slate-400 text-center mb-8 md:w-150 md:text-lg">
-          منصة رقمية متكاملة تجمع إدارة الطلاب، الجداول، الحضور، التقارير، و
-          التواصل مع أولياء الأمور كل ذلك في نظام واحد سهل و آمن ومتوافق مع
-          متطلبات وزارة التعليم.
+         {description}
         </p>
         <div className="w-full flex gap-4 mb-3 md:justify-center">
           <button className="bg-(--tenant-primary) text-white py-2.5 px-5 rounded-xl grow md:grow-0">
@@ -59,7 +64,7 @@ const FeatureHeroSection = () => {
         transition={{ duration: 0.5, delay: 0.9 }}
         className="flex flex-wrap gap-2 md:flex-nowrap md:w-full lg:w-300"
       >
-        {featureNumbers.map((item) => (
+        { isNumbers && featureNumbers.map((item) => (
           <div
             key={item.title}
             className="w-[48%] md:flex-1 flex flex-col justify-center items-center gap-2 font-semibold 
