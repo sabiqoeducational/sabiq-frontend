@@ -1,31 +1,30 @@
 
-import { AboutStats } from '@/modules/landing/presentation/components/AboutStats';
-import { AppDownloadBanner } from '@/modules/landing/presentation/components/AppDownloadBanner';
-import { FeatureShowcase } from '@/modules/landing/presentation/components/FeatureShowcase';
-import { HeroSection } from '@/modules/landing/presentation/components/HeroSection';
-import { HowItWorks } from '@/modules/landing/presentation/components/HowItWorks';
-import { PlatformModules } from '@/modules/landing/presentation/components/PlatformModules';
-import { SchoolProof } from '@/modules/landing/presentation/components/SchoolProof';
-import { Testimonials } from '@/modules/landing/presentation/components/Testimonials';
+import { AboutStats } from '@/modules/platform/ui/Home/AboutStats';
+import { AppDownloadBanner } from '@/modules/platform/ui/Home/AppDownloadBanner';
+import { FeatureShowcase } from '@/modules/platform/ui/Home/FeatureShowcase';
+import { HeroSection } from '@/modules/platform/ui/Home/HeroSection';
+import { PlatformModules } from '@/modules/platform/ui/Home/PlatformModules';
+import { SchoolProof } from '@/modules/platform/ui/Home/SchoolProof';
+import { Testimonials } from '@/modules/platform/ui/Home/Testimonials';
 import { getLandingContent } from '@/modules/landing/services/landingService';
+import FeatureHowitWork from "@/modules/platform/ui/Feature/FeatureHowitWork";
 import Image from 'next/image';
 
 
 // IMPORT DATA FROM LANDINGDATA - CONSTANTS
 import {
-  aboutDescription,
   modulesData,
   modulesTitle,
-  platformStats,
   showcaseFeatures,
   showcaseTitle,
-  stepsData,
   testimonialsData,
   testimonialsTitle
 } from '@/modules/landing/constants/landingData';
 import FeatureHowitWork from '@/modules/platform/ui/Feature/FeatureHowitWork';
+import { getServerMessages } from "@/shared/i18n/server";
 
 export default async function PlatformHomePage() {
+  const { messages } = await getServerMessages();
 
   const landingData = await getLandingContent('public');
 
@@ -44,17 +43,13 @@ export default async function PlatformHomePage() {
         </div>
 
         <div className="relative">
-          
           <HeroSection heroData={landingData.hero} />
         </div>
       </div>
 
       {/* ========= HERO AND NAV BAR ========= */}
       <SchoolProof />
-      <AboutStats
-        description={aboutDescription}
-        stats={platformStats}
-      />
+      <AboutStats content={messages.platform.about.stats} />
 
       <PlatformModules
         title={modulesTitle}
@@ -75,12 +70,10 @@ export default async function PlatformHomePage() {
       <AppDownloadBanner />
 
       <Testimonials
-            title={testimonialsTitle}
-            subtitle="آراء مديري المدارس والمعلمين وأولياء الأمور حول تجربتهم مع سابق وكيف ساعدهم في تطوير العملية التعليمية."
-            testimonials={testimonialsData}
-         />
-
-      
+        title={testimonialsTitle}
+        subtitle="آراء مديري المدارس والمعلمين وأولياء الأمور حول تجربتهم مع سابق وكيف ساعدهم في تطوير العملية التعليمية."
+        testimonials={testimonialsData}
+      />
 
     </main>
   );

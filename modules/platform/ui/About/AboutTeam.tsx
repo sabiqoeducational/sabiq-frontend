@@ -57,9 +57,10 @@ export const AboutTeam = ({ content }: AboutTeamProps) => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.08 }}
           transition={{ duration: 0.2, ease: "easeIn", delay: 0.2 }}
+          className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"
         >
           {" "}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 2xl:gap-12">
             {content.members.map((member, index) => (
               <div key={index} className="flex flex-col group">
                 {/* Image Card */}

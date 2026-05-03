@@ -22,7 +22,7 @@ export const CTA = ({ content }: CTAProps) => {
         <div className="relative  w-full h-100 md:h-120 lg:h-100 rounded-lg overflow-hidden group">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/shared/5fdf49f287c43eda8bcb959a09dfb5b29f794f72.png"
+              src="/platform/shared/5fdf49f287c43eda8bcb959a09dfb5b29f794f72.png"
               alt="Join Sabiq"
               fill
               className="object-cover transition-transform duration-1000 group-hover:scale-105"

@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "@/shared/components/Reveal";
+import WorldMap from "./WorldMap";
 interface OfficeLocation {
   country: string;
   phone: string;
@@ -64,14 +65,10 @@ export const OfficesSection = ({ content }: OfficesSectionProps) => {
         </div>
 
         {/* World Map Illustration */}
+
         <Reveal direction="none" delay={0.6}>
           <div className="relative w-full  h-130 md:h-auto  md:aspect-21/9 mb-10 md:mb-14 rounded-xl overflow-hidden ">
-            <Image
-              src="/platform/Contact/images/Map Placeholder.svg"
-              alt="Sabiq Presence Map"
-              fill
-              className="object-cover md:object-contain "
-            />
+            <WorldMap />
           </div>
         </Reveal>
 

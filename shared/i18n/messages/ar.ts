@@ -129,25 +129,29 @@ const ar = {
             name: "عبدالله العتيبي",
             role: "الرئيس التنفيذي — CEO",
             bio: "سابقاً مدير تطوير تعليمي في وزارة التعليم السعودية، يقود سابق نحو تحويل التعليم رقمياً.",
-            image: "/images/team/dcc7f791330a25fa946dd8c60d4d5e382d0cbe7f.png",
+            image:
+              "/platform/About/team/dcc7f791330a25fa946dd8c60d4d5e382d0cbe7f.png",
           },
           {
             name: "نورة الدوسري",
             role: "مديرة تطوير المنتجات",
             bio: "10 سنوات في بناء منتجات رقمية للسوق العربي، تضمن أن كل ميزة تُحل مشكلة حقيقية.",
-            image: "/images/team/0badc9bd3564f0db7d4d903848d3d63e1d046b42.png",
+            image:
+              "/platform/About/team/0badc9bd3564f0db7d4d903848d3d63e1d046b42.png",
           },
           {
             name: "خالد الشمري",
             role: "المدير التقني — CTO",
             bio: "خبرة واسعة في بناء أنظمة تعليمية على نطاق كبير، يضمن أن المنصة سريعة و آمنة و قابلة للتوسع.",
-            image: "/images/team/c8c76a5c43656939dc9d9cc7489fa72027a3a7b4.png",
+            image:
+              "/platform/About/team/c8c76a5c43656939dc9d9cc7489fa72027a3a7b4.png",
           },
           {
             name: "سارة السالم",
             role: "رئيسة نجاح العملاء",
             bio: "الحلقة المباشرة بين سابق و المدارس، تضمن أن كل مدرسة تحقق أقصى استفادة من المنصة.",
-            image: "/images/team/45f8c543f5b897938f81970d5c0882895c17c4af.jpg",
+            image:
+              "/platform/About/team/45f8c543f5b897938f81970d5c0882895c17c4af.jpg",
           },
         ],
       },
@@ -225,7 +229,7 @@ const ar = {
             flag: "/platform/About/flags/eg.svg",
           },
           {
-            country:  "مكتب السعودية",
+            country: "مكتب السعودية",
             phone: "+966121384048",
             address: "طريق الملك فهد، العليا، الرياض",
             email: "sa@sabiq.sa",

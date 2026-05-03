@@ -1,9 +1,7 @@
 import { Building2, CalendarDays, Users, PieChart, MessageSquare, FileCheck2 } from 'lucide-react';
-import { TestimonialItem } from '@/modules/landing/presentation/components/Testimonials';
-import { StatItem } from '@/modules/landing/presentation/components/AboutStats';
-import { ModuleItem } from '@/modules/landing/presentation/components/PlatformModules';
-import { StepItem } from '@/modules/landing/presentation/components/HowItWorks';
-import { ShowcaseItem } from '@/modules/landing/presentation/components/FeatureShowcase';
+import { TestimonialItem } from '@/modules/platform/ui/Home/Testimonials';
+import { ModuleItem } from '@/modules/platform/ui/Home/PlatformModules';
+import { ShowcaseItem } from '@/modules/platform/ui/Home/FeatureShowcase';
 
 export const testimonialsData: TestimonialItem[] = [
    {
@@ -42,12 +40,6 @@ export const testimonialsTitle = (
    </>
 );
 
-export const platformStats: StatItem[] = [
-   { id: 1, value: "500+", label: "مدرسة" },
-   { id: 2, value: "120K+", label: "طالب مسجل" },
-   { id: 3, value: "98%", label: "رضا المستخدمين" },
-   { id: 4, value: "60%", label: "توفير في الوقت" },
-];
 
 export const aboutDescription = (
    <>
@@ -100,28 +92,6 @@ export const modulesData: ModuleItem[] = [
    },
 ];
 
-export const stepsData: StepItem[] = [
-   {
-      id: 1,
-      title: "إنشاء حساب المدرسة",
-      description: "إنشاء حساب خاص بمدرستك وإعداد المعلومات الأساسية مثل الصفوف والمعلمين والهيكل التعليمي للمدرسة.",
-   },
-   {
-      id: 2,
-      title: "إضافة الطلاب والمعلمين",
-      description: "إضافة بيانات الطلاب وأولياء الأمور والمعلمين بسهولة وتنظيم الملفات التعليمية في مكان واحد.",
-   },
-   {
-      id: 3,
-      title: "إدارة العمليات اليومية",
-      description: "ابدأ بإدارة العمليات اليومية مثل تسجيل الحضور وتنظيم الجداول الدراسية وإدارة الاختبارات والدرجات.",
-   },
-   {
-      id: 4,
-      title: "متابعة التقارير والتواصل",
-      description: "اطلع على التقارير والتحليلات وتواصل مع أولياء الأمور لمتابعة تقدم الطلاب بشكل مستمر.",
-   },
-];
 
 export const showcaseFeatures: ShowcaseItem[] = [
    {
