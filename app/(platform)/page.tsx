@@ -20,6 +20,7 @@ import {
   testimonialsData,
   testimonialsTitle
 } from '@/modules/landing/constants/landingData';
+import FeatureHowitWork from '@/modules/platform/ui/Feature/FeatureHowitWork';
 import { getServerMessages } from "@/shared/i18n/server";
 
 export default async function PlatformHomePage() {
@@ -61,6 +62,8 @@ export default async function PlatformHomePage() {
         subtitle="باستخدام وحدات سابق المتكاملة، يمكن لإدارة المدرسة تنظيم العمليات اليومية بسهولة، وتحسين متابعة الطلاب، وتعزيز التواصل مع أولياء الأمور."
         features={showcaseFeatures}
       />
+
+      {/* <HowItWorks steps={stepsData} /> */}
 
       <FeatureHowitWork />
 

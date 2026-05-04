@@ -95,7 +95,7 @@ const FeatureServiceSection = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center m-4">
+    <section className="flex flex-col items-center m-4 lg:mx-24 ">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 , transition: { duration: 0.5 , delay: 0.2 } }}
