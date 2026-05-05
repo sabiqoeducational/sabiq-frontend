@@ -7,7 +7,6 @@ import { PlatformModules } from '@/modules/platform/ui/Home/PlatformModules';
 import { SchoolProof } from '@/modules/platform/ui/Home/SchoolProof';
 import { Testimonials } from '@/modules/platform/ui/Home/Testimonials';
 import { getLandingContent } from '@/modules/landing/services/landingService';
-import FeatureHowitWork from "@/modules/platform/ui/Feature/FeatureHowitWork";
 import Image from 'next/image';
 
 
