@@ -286,8 +286,10 @@ const ar = {
   common: {
     language: "اللغة",
   },
-} as const;
+};
 
-export type Messages = typeof ar;
+type DeepString<T> = T extends string ? string : T extends (infer U)[] ? DeepString<U>[] : T extends object ? { [K in keyof T]: DeepString<T[K]> } : T;
+
+export type Messages = DeepString<typeof ar>;
 
 export { ar };

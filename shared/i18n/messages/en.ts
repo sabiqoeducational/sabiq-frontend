@@ -18,8 +18,15 @@ export const en: Messages = {
         { value: "99.9%", label: "Uptime" },
       ],
     },
+    nav: {
+      home: "Home",
+      about: "About Us",
+      features: "Features",
+      pricing: "Pricing",
+      contact: "Contact",
+      login: "Login",
+    },
     about: {
-      title: "About Us",
       hero: {
         badge: "Who We Are",
         titleblack: "We empower schools to achieve ",
@@ -119,13 +126,6 @@ export const en: Messages = {
             bio: "The direct link between Sabiq and schools, ensuring every institution achieves maximum benefit from the platform.",
             image: "/team/45f8c543f5b897938f81970d5c0882895c17c4af.jpg",
           },
-        ],
-      },
-      faq: {
-        title: "Everything you need to know about Sabiq",
-        questions: [
-          { q: "When was Sabiq founded?", a: "Sabiq was founded in..." },
-          // ... rest of questions
         ],
       },
     },
