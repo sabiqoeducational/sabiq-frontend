@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --tenant-primary: #155dfc;
+  --tenant-secondary: #0f172a;
+  --bg-secondary : #F6F7FB;
+  --text-secondary: #6B7280;
+}
 @layer base {
   :root {
     --color-brand: #156AE1; 
@@ -10,6 +18,10 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
+  }
+
+  *{
+    font-family: "Avenir Arabic", sans-serif;
   }
 }
 

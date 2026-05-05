@@ -30,7 +30,7 @@ export type LandingContent = {
 };
 
 export async function getLandingContent(tenant: string): Promise<LandingContent> {
-  const tenantName = tenant === "public" ? "سبيق" : tenant;
+  const tenantName = tenant === "public" ? "سابق" : tenant;
 
   return {
     hero: {

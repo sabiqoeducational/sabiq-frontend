@@ -1,3 +1,4 @@
+import { ValidationError } from "@/core/errors/AppError";
 import {
   AuthRepository,
   LoginCommand,
@@ -8,8 +9,11 @@ export class LoginUseCase {
   constructor(private readonly authRepository: AuthRepository) {}
 
   async execute(command: LoginCommand): Promise<LoginResult> {
-    if (!command.email || !command.password) {
-      throw new Error("Email and password are required");
+    if (!command.email) {
+      throw new ValidationError("Email is required", "email");
+    }
+    if (!command.password) {
+      throw new ValidationError("Password is required", "password");
     }
 
     return this.authRepository.login(command);

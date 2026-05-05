@@ -1,23 +1,21 @@
+import { HeroComponent } from "@/modules/platform/components/HeroComponent";
+import { AboutPartners } from "@/modules/platform/ui/About/AboutPartners";
+import { AboutStats } from "@/modules/platform/ui/About/AboutStats";
+import { AboutStory } from "@/modules/platform/ui/About/AboutStory";
+import { AboutTeam } from "@/modules/platform/ui/About/AboutTeam";
+import { AboutVisionMission } from "@/modules/platform/ui/About/AboutVisionMission";
 import { getServerMessages } from "@/shared/i18n/server";
-import { AboutHero } from "@/modules/platform/components/AboutHero";
-import { AboutStats } from "@/modules/platform/components/AboutStats";
-import { AboutStory } from "@/modules/platform/components/AboutStory";
-import { AboutVisionMission } from "@/modules/platform/components/AboutVisionMission";
-import { AboutPartners } from "@/modules/platform/components/AboutPartners";
-import { AboutTeam } from "@/modules/platform/components/AboutTeam";
-import { CTA } from "@/shared/components/CTA";
 export default async function AboutPage() {
   const { messages } = await getServerMessages();
 
   return (
-    <main className="bg-white">
-      <AboutHero content={messages.platform.about.hero} />
+    <main className="bg-white ">
+      <HeroComponent content={messages.platform.about.hero} />
       <AboutStats content={messages.platform.about.stats} />
       <AboutStory content={messages.platform.about.story} />
       <AboutVisionMission content={messages.platform.about.visionMission} />
       <AboutPartners content={messages.platform.about.partners} />
       <AboutTeam content={messages.platform.about.team} />
-      <CTA content={messages.platform.cta}></CTA>
     </main>
   );
 }
