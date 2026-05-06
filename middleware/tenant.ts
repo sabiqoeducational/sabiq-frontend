@@ -5,7 +5,7 @@ const PLATFORM_HOSTS = new Set([
   "localhost",
   "127.0.0.1",
   "lvh.me",
-  "https://sabiq-frontend-owlq.vercel.app/"
+  "sabiq-frontend-owlq.vercel.app"
 ]);
 
 export function extractTenantFromHost(host: string): string | null {
@@ -30,5 +30,10 @@ export function extractTenantFromHost(host: string): string | null {
 
 export function isPlatformHost(host: string): boolean {
   const hostname = host.split(":")[0].toLowerCase();
-  return PLATFORM_HOSTS.has(hostname);
+
+  if (PLATFORM_HOSTS.has(hostname)) return true;
+
+  if (hostname.endsWith(".vercel.app")) return true;
+
+  return false;
 }
