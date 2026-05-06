@@ -5,6 +5,7 @@ const PLATFORM_HOSTS = new Set([
   "localhost",
   "127.0.0.1",
   "lvh.me",
+  "https://sabiq-frontend-owlq.vercel.app/"
 ]);
 
 export function extractTenantFromHost(host: string): string | null {
